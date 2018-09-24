@@ -1,0 +1,47 @@
+.backgroundImg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.results {
+    float: left;
+    width: 20%;
+    height: 60px;
+}
+
+.header{
+background-color: darkgray;
+widows: 50%;
+border: solid 2px burlywood;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center
+}
+.timer{
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    border: solid 2px black;
+}
+form{
+    border-style: outset;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+input[type="radio"] {
+    margin-right: 3px;
+    margin-left: 20px;
+  }
+
+  .results{
+    text-align: center;
+    width: 20%;
+    height: 60px;
+    border: 2px whitesmoke;
+    background-color: white;
+    /* padding-left: 650px; */
+  }
