@@ -1,14 +1,14 @@
 // initialize the .js document with this. It contains all of the code for the .js file:
 $(document).ready(function () {
 
-	// this game object holds all of the questions, possible answers, and then the index of the correct answer for each
+	// this game object holds all of the questions, answers, and then the index of the correct answer for each
 	var game = {
 		questions: [
 			{
 				question: 'What is the largest Mammal?',
 				possibles: ['Elephant', 'Blue Whale', 'Bats', 'Armadillos', 'White Shark'],
 				id: 'question-one',
-				answer: 2
+				answer: 1
 			}, {
 				question: 'What is the capital of California?',
 				possibles: ['Sacramento', 'Los Angeles', 'Santa Barbara', 'San Jose', 'San Diego'],
@@ -26,16 +26,16 @@ $(document).ready(function () {
 				answer: 2
 			}, {
 				question: 'Which one is an ingredient in a Tom Collins?',
-				possibles: ['Gin', 'Tom Hanks', 'Diet Coke', 'Coffee', 'Almond Milk'],
+				possibles: ['Coke', 'Tom Hanks', 'Cherries', 'Gin', 'Almond Milk'],
 				id: 'question-five',
-				answer: 0
+				answer: 3
 			}
 		]
 	}
 
 
-	// These events start the timer: set the number of seconds the guesser has 
-	var number = 4;
+	// Number of seconds to start the game.
+	var number = 16;
 	$('#timeLeft').on('click', run);
 
 	// This function enables the number of seconds to decrease with time, and to display
@@ -49,10 +49,6 @@ $(document).ready(function () {
 		if (number === 0) {
 			// run the stop function.
 			stop();
-			// Alert the user that time is up. Update the innerHTML of the message
-			// div to say 'Game Over!'
-			// alert('Time Up!')
-			$('#message').html('time up!');
 			checkAnswers();
 		}
 	}
@@ -65,7 +61,7 @@ $(document).ready(function () {
 
 	// The stop function
 	function stop() {
-		// Clears our "counter" interval. The interval name is passed to the clearInterval function.
+		// Clears our "counter" interval.
 		clearInterval(counter);
 	}
 
@@ -152,7 +148,7 @@ $(document).ready(function () {
 		}
 		// display the results of the function in the results div and use strings of text to relate the
 		// results of the for loop with their corresponding values
-		$('.results').html('correct: ' + correct + "<br>" + 'incorrect: ' + incorrect + "<br>" + 'unanswered: ' + unAnswered);
+		$('.results').html('Correct: ' + correct + "<br>" + 'Incorrect: ' + incorrect + "<br>" + 'Unanswered: ' + unAnswered);
 	}
 
 	// this function checks whether the guesser actually checked an answer for each of the 
@@ -172,12 +168,4 @@ $(document).ready(function () {
 		return anyAnswered;
 
 	}
-
-	// create a function with an onclick event for the doneButton that both checks the Answers 
-	// and stops the clock when "done" button is pressed
-	$('#doneButton').on('click', function () {
-		checkAnswers();
-		stop();
-		$("#messageDiv").html("Game Over!");
-	})
 });

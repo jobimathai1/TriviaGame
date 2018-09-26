@@ -38,7 +38,7 @@ input[type="radio"] {
   }
 
   .results{
-    text-align: center;
+    text-align: left;
     width: 20%;
     height: 60px;
     border: 2px whitesmoke;
